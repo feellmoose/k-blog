@@ -1,2 +1,2 @@
 ## K-blog
-faster liter stronger blog system written by Kotlin 
+Faster Liter Stronger Blog System, Written by Kotlin 
