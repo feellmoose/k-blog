@@ -1,7 +1,8 @@
 package `fun`.feellmoose
 
 import `fun`.feellmoose.internal.application.configureSerialization
-import `fun`.feellmoose.route.pages.configureRouting
+import `fun`.feellmoose.route.api.configureRoutingForApi
+import `fun`.feellmoose.route.pages.configureRoutingForPages
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
@@ -13,5 +14,6 @@ fun main() {
 
 fun Application.module() {
     configureSerialization()
-    configureRouting()
+    configureRoutingForApi()
+    configureRoutingForPages()
 }
