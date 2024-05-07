@@ -1,4 +1,4 @@
-package `fun`.feellmoose.internal.application
+package `fun`.feellmoose.config
 
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
