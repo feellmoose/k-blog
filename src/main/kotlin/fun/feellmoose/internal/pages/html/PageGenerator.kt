@@ -19,10 +19,11 @@ object ArticlePageGenerator : PageGenerator() {
         return html {
             head {
                 meta { charset = "utf-8" }
-                link(rel = "stylesheet", href = "/styles.css", type = "text/css")
-                link(rel = "stylesheet", href = "/fonts.css", type = "text/css")
-                link(rel = "stylesheet", href = "/article.css", type = "text/css")
-                link(rel = "stylesheet", href = "/reset.css", type = "text/css")
+                link(rel = "stylesheet", href = "/css/styles.css", type = "text/css")
+                link(rel = "stylesheet", href = "/css/fonts.css", type = "text/css")
+                link(rel = "stylesheet", href = "/css/article.css", type = "text/css")
+                link(rel = "stylesheet", href = "/css/reset.css", type = "text/css")
+                link(rel = "stylesheet", href = "/css/dark-min.css", type = "text/css") {}
                 link(rel = "preconnect", href = "https://fonts.googleapis.com")
                 link(
                     rel = "preconnect",
@@ -33,7 +34,6 @@ object ArticlePageGenerator : PageGenerator() {
                     rel = "stylesheet"
                 )
                 link(href = "https://fonts.gstatic.com", rel = "stylesheet")
-                link(rel = "stylesheet", href = "/dark-min.css", type = "text/css") {}
             }
             body {
                 div(classes = "paper") {

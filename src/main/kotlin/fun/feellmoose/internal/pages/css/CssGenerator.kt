@@ -12,14 +12,14 @@ val bgColor1 = Color("#eee")
 val line1 = Color("#eee")
 val line2 = Color(" #ddd")
 
-abstract class CssGenerator : Generator<Nothing, String>
+abstract class CssGenerator : Generator<Unit, String>
 
 inline fun css(builder: CSSBuilder.() -> Unit): String {
     return CSSBuilder().apply(builder).toString()
 }
 
 object ArticleCssGenerator : CssGenerator() {
-    override fun generate(resource: Nothing): String {
+    override fun generate(resource: Unit): String {
         return css {
             rule(".article") {
                 width = 100.pct
@@ -167,7 +167,7 @@ object ArticleCssGenerator : CssGenerator() {
 
 
 object ResetCssGenerator : CssGenerator() {
-    override fun generate(resource: Nothing): String {
+    override fun generate(resource: Unit): String {
         return css{
             rule("*,*::before,*::after") {
                 boxSizing = BoxSizing.borderBox
@@ -209,8 +209,8 @@ object ResetCssGenerator : CssGenerator() {
     }
 }
 
-object DarkMainCssGenerator : CssGenerator() {
-    override fun generate(resource: Nothing): String {
+object DarkMinCssGenerator : CssGenerator() {
+    override fun generate(resource: Unit): String {
         return css{
             rule("pre code.hljs"){
                 display = Display.block
@@ -264,7 +264,7 @@ object DarkMainCssGenerator : CssGenerator() {
 }
 
 object  StyleCssGenerator: CssGenerator(){
-    override fun generate(resource: Nothing): String {
+    override fun generate(resource: Unit): String {
         return css{
             p {
                 wordWrap = WordWrap.breakWord
@@ -596,7 +596,7 @@ object  StyleCssGenerator: CssGenerator(){
 }
 
 object FontCssGenerator: CssGenerator(){
-    override fun generate(resource: Nothing): String {
+    override fun generate(resource: Unit): String {
         return css{
             fontFace {
                 fontFamily = "\"Montserrat\", sans-serif"

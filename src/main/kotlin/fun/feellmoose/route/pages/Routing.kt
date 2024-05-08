@@ -7,6 +7,5 @@ import io.ktor.server.routing.*
 fun Application.configureRoutingForPages() {
     routing {
         staticResources("/", "./static")
-
     }
 }

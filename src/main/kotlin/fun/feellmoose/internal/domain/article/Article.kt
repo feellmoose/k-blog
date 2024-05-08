@@ -1,6 +1,5 @@
 package `fun`.feellmoose.internal.domain.article
 
-import `fun`.feellmoose.config.GlobalConfig
 import java.time.LocalDateTime
 
 data class Article(
@@ -13,8 +12,14 @@ data class Article(
     val createdTime: LocalDateTime,
     val tags: List<String>,
     var modifiedTime: LocalDateTime,
+    var link: String = "",
     var status: Status,
-)
+) {
+    fun withLink(link: String): Article {
+        this.link = link
+        return this
+    }
+}
 
 data class ArticlePage(
     var body: String
@@ -27,9 +32,9 @@ enum class Status {
 }
 
 data class ArticleDescription(
-    val url: String,
     val title: String,
     val description: String,
+    val link: String,
     val createdTime: LocalDateTime,
     val modifiedTime: LocalDateTime,
     val tags: List<String>,
@@ -37,7 +42,7 @@ data class ArticleDescription(
     companion object {
         fun of(article: Article): ArticleDescription {
             return ArticleDescription(
-                url = GlobalConfig.BASE_URL + "/article/" + article.uuid,
+                link = article.link,
                 title = article.title,
                 description = article.description,
                 createdTime = article.createdTime,
