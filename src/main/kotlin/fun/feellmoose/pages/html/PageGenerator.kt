@@ -1,8 +1,8 @@
-package `fun`.feellmoose.internal.pages.html
+package `fun`.feellmoose.pages.html
 
 import `fun`.feellmoose.internal.Generator
 import `fun`.feellmoose.internal.domain.article.Article
-import `fun`.feellmoose.internal.domain.article.ArticleGenerator
+import `fun`.feellmoose.pages.css.*
 import kotlinx.html.*
 import kotlinx.html.stream.appendHTML
 import java.time.format.DateTimeFormatter
@@ -15,6 +15,15 @@ fun html(block: HTML.() -> Unit): String = buildString {
 }
 
 object ArticlePageGenerator : PageGenerator() {
+
+    val css = buildMap {
+        put("article", ArticleCssGenerator)
+        put("reset", ResetCssGenerator)
+        put("fonts", FontCssGenerator)
+        put("styles", StyleCssGenerator)
+        put("darkMin", DarkMinCssGenerator)
+    }
+
     override fun generate(resource: Article): String {
         return html {
             head {

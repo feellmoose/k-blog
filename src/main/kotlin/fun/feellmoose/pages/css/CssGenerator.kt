@@ -1,4 +1,4 @@
-package `fun`.feellmoose.internal.pages.css
+package `fun`.feellmoose.pages.css
 
 import `fun`.feellmoose.internal.Generator
 import kotlinx.css.*

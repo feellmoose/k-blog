@@ -3,7 +3,7 @@ package `fun`.feellmoose.internal.usecase
 import `fun`.feellmoose.config.GlobalConfig
 import `fun`.feellmoose.internal.ResourceFileUtil
 import `fun`.feellmoose.internal.domain.article.ArticleGenerator
-import `fun`.feellmoose.internal.pages.html.ArticlePageGenerator
+import `fun`.feellmoose.pages.html.ArticlePageGenerator
 import java.io.File
 
 object ArticleUseCase {
