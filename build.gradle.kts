@@ -34,8 +34,11 @@ dependencies {
     implementation("io.ktor:ktor-server-auth-jvm")
     implementation("io.ktor:ktor-server-auth-jwt-jvm")
     implementation("io.ktor:ktor-server-netty-jvm")
+    implementation("io.ktor:ktor-client-core")
+    implementation("io.ktor:ktor-client-cio")
     implementation("ch.qos.logback:logback-classic:$logback_version")
     implementation("org.jetbrains:markdown:0.6.1")
+    implementation("io.ktor:ktor-client-cio-jvm:2.3.10")
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 }

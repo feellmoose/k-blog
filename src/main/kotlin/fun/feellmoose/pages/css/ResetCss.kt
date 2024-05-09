@@ -2,7 +2,7 @@ package `fun`.feellmoose.pages.css
 
 import kotlinx.css.*
 
-object ResetCss : CssGenerator() {
+object ResetCss : Css() {
     override fun generate(resource: Unit): String = css {
         rule("*,*::before,*::after") {
             boxSizing = BoxSizing.borderBox

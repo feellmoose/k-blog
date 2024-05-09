@@ -3,7 +3,7 @@ package `fun`.feellmoose.pages.css
 import kotlinx.css.*
 
 
-object DarkMinCss : CssGenerator() {
+object DarkMinCss : Css() {
     override fun generate(resource: Unit): String = css {
         rule("pre code.hljs") {
             display = Display.block

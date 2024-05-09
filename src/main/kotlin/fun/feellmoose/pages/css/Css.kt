@@ -4,7 +4,7 @@ import `fun`.feellmoose.internal.Generator
 import kotlinx.css.CSSBuilder
 import kotlinx.css.Color
 
-abstract class CssGenerator : Generator<Unit, String>
+abstract class Css : Generator<Unit, String>
 
 inline fun css(builder: CSSBuilder.() -> Unit): String {
     return CSSBuilder().apply(builder).toString()

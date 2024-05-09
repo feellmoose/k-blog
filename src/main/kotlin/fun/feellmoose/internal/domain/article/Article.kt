@@ -9,9 +9,9 @@ data class Article(
     val author: String,
     val page: ArticlePage,
     val markdown: String,
-    val createdTime: LocalDateTime,
+    val createdTime: String,
     val tags: List<String>,
-    var modifiedTime: LocalDateTime,
+    var modifiedTime: String,
     var link: String = "",
     var status: Status,
 ) {
@@ -35,8 +35,8 @@ data class ArticleDescription(
     val title: String,
     val description: String,
     val link: String,
-    val createdTime: LocalDateTime,
-    val modifiedTime: LocalDateTime,
+    val createdTime: String,
+    val modifiedTime: String,
     val tags: List<String>,
 ) {
     companion object {

@@ -4,7 +4,7 @@ import kotlinx.css.*
 import kotlinx.css.properties.*
 
 
-object StyleCss : CssGenerator() {
+object StyleCss : Css() {
     override fun generate(resource: Unit): String = css {
         p {
             wordWrap = WordWrap.breakWord

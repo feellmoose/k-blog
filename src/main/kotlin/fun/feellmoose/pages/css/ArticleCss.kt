@@ -4,7 +4,7 @@ import kotlinx.css.*
 import kotlinx.css.properties.*
 
 
-object ArticleCss : CssGenerator() {
+object ArticleCss : Css() {
     override fun generate(resource: Unit): String = css {
         rule(".article") {
             width = 100.pct

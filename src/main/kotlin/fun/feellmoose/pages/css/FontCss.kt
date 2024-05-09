@@ -2,7 +2,7 @@ package `fun`.feellmoose.pages.css
 
 import kotlinx.css.*
 
-object FontCss : CssGenerator() {
+object FontCss : Css() {
     override fun generate(resource: Unit): String = css {
         fontFace {
             fontFamily = "\"Montserrat\", sans-serif"
