@@ -130,7 +130,7 @@ object StyleCss : Css() {
             display = Display.inlineBlock
             fontSize = 1.6.rem
             fontWeight = FontWeight("600")
-            lineHeight = LineHeight("1.5em")
+            lineHeight = LineHeight("1.5")
             marginBottom = 12.px
             color = fontColor1
         }

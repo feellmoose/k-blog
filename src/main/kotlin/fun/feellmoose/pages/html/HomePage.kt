@@ -20,12 +20,16 @@ object HomePage : Page<List<Article>>() {
             div("post-list") {
                 for (article in resource) {
                     div("post") {
-                        a("post-title") {
+                        a(classes = "post-title") {
                             href = article.link
                             +article.title
                         }
                         div("post-except") {
                             +article.description
+                            a(classes = "read-more"){
+                                href = article.link
+                                +"..."
+                            }
                         }
                         div("post-date") {
                             +article.createdTime

@@ -45,7 +45,7 @@ object ArticleGenerator : Generator<String, Article> {
             if (stringBuilder.length < max) {
                 node.children.forEach {
                     if (it.type == LINK_DESTINATION) return@forEach
-                    if (it.type == TEXT) stringBuilder.append(it.getTextInNode(markdown));println(it.type)
+                    if (it.type == TEXT) stringBuilder.append(it.getTextInNode(markdown))
                     if (it.type == CODE_FENCE_CONTENT) stringBuilder.append(it.getTextInNode(markdown))
                     else generateToString(it)
                 }
@@ -58,15 +58,16 @@ object ArticleGenerator : Generator<String, Article> {
 
     private fun getDescription(description: String, predix: String): String? =
         description.lines().find { it.startsWith(predix) }?.substring(predix.length)
-
 }
 
 data class ArticlePart(val description: String, val article: String)
 
 object ArticlePartGenerator : Generator<String, ArticlePart> {
     override fun generate(resource: String): ArticlePart {
-        val index = resource.indexOf("---", 4)
-        return ArticlePart(resource.substring(4, index), resource.substring(index + 4))
+        if (resource.startsWith("---")) {
+            val index = resource.indexOf("---", 4)
+            return ArticlePart(resource.substring(4, index), resource.substring(index + 4))
+        } else return ArticlePart("", resource)
     }
 }
 
